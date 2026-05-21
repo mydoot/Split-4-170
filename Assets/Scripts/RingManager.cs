@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 using Vector3 = UnityEngine.Vector3;
+using Plane = UnityEngine.Plane;
 
 public class RingManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class RingManager : MonoBehaviour
     private LineRenderer line;
 
     private Rigidbody rb3D;
+
+    private Plane dragPlane;
 
     public float power = 10f;
 
@@ -43,6 +46,7 @@ public class RingManager : MonoBehaviour
         {
             Debug.Log("click");
             startpoint = ringTransform.position;
+            dragPlane = new Plane(Vector3.up, transform.position);
         }
         if (UnityEngine.InputSystem.Mouse.current.leftButton.isPressed) // modify this to work on clicking the 3d object
         {
@@ -50,6 +54,8 @@ public class RingManager : MonoBehaviour
             Vector3 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
             mousePos.z = cam.WorldToScreenPoint(transform.position).z;
             currentpoint = cam.ScreenToWorldPoint(mousePos);
+
+            Ray dragRay = cam.ScreenPointToRay(mousePos);
 
             dragVector = startpoint - currentpoint;
             dragVector = Vector3.ClampMagnitude(dragVector, maxDrag);  

@@ -1470,6 +1470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9265415f2cd269e4db3b0dcca42bde78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  power: 20
+  trajectoryResolution: 30
   cam: {fileID: 0}
   ringTransform: {fileID: 2002223911}
 --- !u!120 &2002223914
@@ -1712,13 +1714,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055971743}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03545754, y: -0, z: -0, w: 0.9993712}
-  m_LocalPosition: {x: 0, y: 4.29, z: -13.38}
+  m_LocalRotation: {x: 0.21333012, y: -0, z: -0, w: 0.9769802}
+  m_LocalPosition: {x: 0, y: 7.23, z: -16.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 4.064, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.635, y: 0, z: 0}
 --- !u!1 &2062629883
 GameObject:
   m_ObjectHideFlags: 0
