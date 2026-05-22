@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public static RingManager.OnRingToss onRingToss; //public event for when the ring is thrown;
 
-    private Transform originalRingPosition;
+    private Quaternion originalRingRotation;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         onRingToss += instantiateNewRing; //GameManager immediately subscribes to the onRingToss event
 
-   
+        originalRingRotation = ringPrefab.transform.rotation;
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     void instantiateNewRing()
     {
         Debug.Log("generating new ring");
-        RingManager newRing = Instantiate(ringPrefab, ringSpawn.position, Quaternion.identity);
+        RingManager newRing = Instantiate(ringPrefab, ringSpawn.position, originalRingRotation);
     
     }
 }
