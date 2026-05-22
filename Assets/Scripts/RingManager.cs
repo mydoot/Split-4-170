@@ -2,9 +2,12 @@
 using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 using Vector3 = UnityEngine.Vector3;
 using Plane = UnityEngine.Plane;
+using Vector2 = UnityEngine.Vector2;
+using System.Collections;
 
 public class RingManager : MonoBehaviour
 {
@@ -21,58 +24,94 @@ public class RingManager : MonoBehaviour
 
     private Plane dragPlane;
 
+    private bool isThrown = false;
+
+    [Tooltip("Boolean to determine if this ring object was thrown")]
+
+    public delegate void OnRingToss();
+
+    [Tooltip("Power of the ring toss. This value is multiplied by the vector of the drag.")]
     public float power = 10f;
 
+    [Tooltip("Power of the ring toss. This value is multiplied by the vector of the drag.")]
+    public float lifeTime = 5f;
+
+    [Tooltip("Resolution for the trajectory line")]
     public int trajectoryResolution = 30;
-    
+
     [SerializeField] private Camera cam;
 
-    [SerializeField] private Transform ringTransform; 
+    [SerializeField] private Transform ringTransform;
 
 
     void Start()
     {
-        rb3D = this.GetComponent<Rigidbody>();
+        rb3D = GetComponent<Rigidbody>();
         cam = Camera.main;
         line = GetComponent<LineRenderer>();
 
         line.enabled = false;
     }
 
-    // Update is called once per frame
+
+    // Had AI assistance for the below
     void Update()
     {
-        if (UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame) // modify this to work on clicking the 3d object
+        if (!isThrown)
         {
-            Debug.Log("click");
-            startpoint = ringTransform.position;
-            dragPlane = new Plane(Vector3.up, transform.position);
+            if (UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                Debug.Log("click");
+
+                Vector2 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+                Ray clickRay = cam.ScreenPointToRay(mousePos);
+
+                if (Physics.Raycast(clickRay, out RaycastHit hit)) //Check if mouse is clicked on ring
+                {
+                    if (hit.collider.gameObject == this.gameObject)
+                    {
+                        dragPlane = new Plane(Vector3.up, ringTransform.position);
+
+
+                        if (dragPlane.Raycast(clickRay, out float distance))
+                        {
+                            startpoint = ringTransform.position;
+                        }
+
+                    }
+                }
+            }
+            if (UnityEngine.InputSystem.Mouse.current.leftButton.isPressed)
+            {
+                Debug.Log("dragging");
+                Vector2 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+
+                Ray dragRay = cam.ScreenPointToRay(mousePos);
+
+                if (dragPlane.Raycast(dragRay, out float distance))
+                {
+                    currentpoint = dragRay.GetPoint(distance);
+
+                    dragVector = startpoint - currentpoint;
+                    dragVector = Vector3.ClampMagnitude(dragVector, maxDrag);
+
+                    ShowTrajectory(dragVector * power);
+                }
+            }
+            if (UnityEngine.InputSystem.Mouse.current.leftButton.wasReleasedThisFrame)
+            {
+                Debug.Log("release");
+                StartCoroutine(destroyRing());
+                isThrown = true;
+                Vector3 finalForce = dragVector * power;
+
+                rb3D.useGravity = true;
+                rb3D.AddForce(finalForce, ForceMode.Impulse);
+                //rb3D.AddForce(-ringTransform.up * (power));
+
+                line.enabled = false;
+            }
         }
-        if (UnityEngine.InputSystem.Mouse.current.leftButton.isPressed) // modify this to work on clicking the 3d object
-        {
-            Debug.Log("dragging");
-            Vector3 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
-            mousePos.z = cam.WorldToScreenPoint(transform.position).z;
-            currentpoint = cam.ScreenToWorldPoint(mousePos);
-
-            Ray dragRay = cam.ScreenPointToRay(mousePos);
-
-            dragVector = startpoint - currentpoint;
-            dragVector = Vector3.ClampMagnitude(dragVector, maxDrag);  
-
-            ShowTrajectory(dragVector * power);
-        }
-        if (UnityEngine.InputSystem.Mouse.current.leftButton.wasReleasedThisFrame) // modify this to work on clicking the 3d object
-        {
-            Debug.Log("release");
-           
-            Vector3 finalForce = dragVector * power;
-
-            //rb3D.useGravity = true;
-            rb3D.AddForce(finalForce);
-
-            line.enabled = false;
-        } 
     }
 
     void ShowTrajectory(Vector3 initialForce)
@@ -82,7 +121,7 @@ public class RingManager : MonoBehaviour
 
         Vector3[] points = new Vector3[trajectoryResolution];
         Vector3 velocity = initialForce / rb3D.mass;
-        Vector3 startPos = transform.position;
+        Vector3 startPos = ringTransform.position;
 
         for (int i = 0; i < trajectoryResolution; i++)
         {
@@ -90,8 +129,15 @@ public class RingManager : MonoBehaviour
             Vector3 pos = startPos + velocity * t + 0.5f * Physics.gravity * t * t;
             points[i] = pos;
         }
-        
+
         line.SetPositions(points);
 
+    }
+
+    IEnumerator destroyRing()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        GameManager.onRingToss?.Invoke(); //calls all methods subscripted to the onRingToss event
+        //Destroy(gameObject);
     }
 }
