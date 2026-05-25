@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 3647414}
   - component: {fileID: 3647413}
   - component: {fileID: 3647412}
-  - component: {fileID: 3647416}
   m_Layer: 0
   m_Name: Cylinder (9)
   m_TagString: Untagged
@@ -234,33 +233,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3647416
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3647411}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &180834454
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +277,6 @@ GameObject:
   - component: {fileID: 220135272}
   - component: {fileID: 220135271}
   - component: {fileID: 220135270}
-  - component: {fileID: 220135274}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -408,33 +379,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &220135274
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220135269}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &294978841
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +391,6 @@ GameObject:
   - component: {fileID: 294978844}
   - component: {fileID: 294978843}
   - component: {fileID: 294978842}
-  - component: {fileID: 294978846}
   m_Layer: 0
   m_Name: Cylinder (8)
   m_TagString: Untagged
@@ -550,33 +493,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &294978846
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294978841}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &398822359
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +505,6 @@ GameObject:
   - component: {fileID: 398822362}
   - component: {fileID: 398822361}
   - component: {fileID: 398822360}
-  - component: {fileID: 398822364}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -692,33 +607,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &398822364
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398822359}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &791066245
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +619,6 @@ GameObject:
   - component: {fileID: 791066248}
   - component: {fileID: 791066247}
   - component: {fileID: 791066246}
-  - component: {fileID: 791066250}
   m_Layer: 0
   m_Name: Cylinder (7)
   m_TagString: Untagged
@@ -834,33 +721,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &791066250
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791066245}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1140151121
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +733,6 @@ GameObject:
   - component: {fileID: 1140151124}
   - component: {fileID: 1140151123}
   - component: {fileID: 1140151122}
-  - component: {fileID: 1140151126}
   m_Layer: 0
   m_Name: Cylinder (5)
   m_TagString: Untagged
@@ -976,33 +835,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1140151126
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140151121}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1218505259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +848,7 @@ GameObject:
   - component: {fileID: 1218505261}
   - component: {fileID: 1218505260}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +944,8 @@ Transform:
   m_LocalPosition: {x: 0.29, y: 3.11, z: -6.9}
   m_LocalScale: {x: 14.060071, y: 0.4546, z: 11.027078}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1917056545}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499696888
@@ -1206,7 +1039,6 @@ GameObject:
   - component: {fileID: 1618557121}
   - component: {fileID: 1618557120}
   - component: {fileID: 1618557119}
-  - component: {fileID: 1618557123}
   m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
@@ -1309,33 +1141,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1618557123
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618557118}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1679313484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1153,6 @@ GameObject:
   - component: {fileID: 1679313487}
   - component: {fileID: 1679313486}
   - component: {fileID: 1679313485}
-  - component: {fileID: 1679313489}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -1451,33 +1255,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1679313489
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679313484}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1907236386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,9 +1325,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917056544}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.04519, y: 2.6599998, z: 10.12}
-  m_LocalScale: {x: 1, y: 0.6729752, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.4007838, y: -0.98988134, z: 1.5434732}
+  m_LocalScale: {x: 0.0711234, y: 1.4803678, z: 0.09068585}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 398822363}
@@ -1563,7 +1340,7 @@ Transform:
   - {fileID: 791066249}
   - {fileID: 294978845}
   - {fileID: 3647415}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1218505263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1937108060
 GameObject:
@@ -1942,7 +1719,6 @@ GameObject:
   - component: {fileID: 2062629886}
   - component: {fileID: 2062629885}
   - component: {fileID: 2062629884}
-  - component: {fileID: 2062629888}
   m_Layer: 0
   m_Name: Cylinder (4)
   m_TagString: Untagged
@@ -2045,33 +1821,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2062629888
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062629883}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2118281493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +1833,6 @@ GameObject:
   - component: {fileID: 2118281496}
   - component: {fileID: 2118281495}
   - component: {fileID: 2118281494}
-  - component: {fileID: 2118281498}
   m_Layer: 0
   m_Name: Cylinder (6)
   m_TagString: Untagged
@@ -2187,33 +1935,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1917056545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2118281498
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118281493}
-  serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &7770501209560915764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2266,6 +1987,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7586101189949529283, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8471235228112346854, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
       propertyPath: cam
       value: 
@@ -2288,7 +2013,6 @@ SceneRoots:
   - {fileID: 1937108063}
   - {fileID: 1218505263}
   - {fileID: 1907236388}
-  - {fileID: 1917056545}
   - {fileID: 1953113288}
   - {fileID: 1499696891}
   - {fileID: 180834455}
