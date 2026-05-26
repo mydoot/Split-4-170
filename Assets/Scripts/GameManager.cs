@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,11 +10,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Transform ringSpawn;
 
+    [SerializeField] TextMeshProUGUI pointText;
+
     public static GameManager Instance { get; private set; } //Turns GameManager into a singleton
 
     public static RingManager.OnRingToss onRingToss; //public event for when the ring is thrown;
 
     private Quaternion originalRingRotation;
+
+    //public variables
+    public int Points = 0;
 
     private void Awake()
     {
@@ -45,5 +51,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("generating new ring");
         RingManager newRing = Instantiate(ringPrefab, ringSpawn.position, originalRingRotation);
     
+    }
+
+    public void gainPoints(int num)
+    {
+        Points += num;
+        pointText.text = $"Points: {Points}";
     }
 }

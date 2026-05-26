@@ -43,6 +43,12 @@ public class RingManager : MonoBehaviour
 
     [SerializeField] private Transform ringTransform;
 
+    [SerializeField] private CapsuleCollider pointCollider;
+
+    [SerializeField] private GameObject clickDetection;
+
+    public LayerMask raycastOnlyLayer;
+
 
     void Start()
     {
@@ -66,10 +72,12 @@ public class RingManager : MonoBehaviour
                 Vector2 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
                 Ray clickRay = cam.ScreenPointToRay(mousePos);
 
-                if (Physics.Raycast(clickRay, out RaycastHit hit)) //Check if mouse is clicked on ring
+                if (Physics.Raycast(clickRay, out RaycastHit hit, 500f, raycastOnlyLayer)) //Check if mouse is clicked on ring
                 {
-                    if (hit.collider.gameObject == this.gameObject)
+                    Debug.Log("The raycast successfully hit: " + hit.collider.gameObject.name);
+                    if (hit.collider.gameObject == clickDetection)
                     {
+                        Debug.Log("The raycast successfully hit yessss: " + hit.collider.gameObject.name);
                         dragPlane = new Plane(Vector3.up, ringTransform.position);
 
 
@@ -83,7 +91,7 @@ public class RingManager : MonoBehaviour
             }
             if (UnityEngine.InputSystem.Mouse.current.leftButton.isPressed)
             {
-                Debug.Log("dragging");
+                //Debug.Log("dragging");
                 Vector2 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
 
                 Ray dragRay = cam.ScreenPointToRay(mousePos);
@@ -139,5 +147,14 @@ public class RingManager : MonoBehaviour
         yield return new WaitForSeconds(lifeTime);
         GameManager.onRingToss?.Invoke(); //calls all methods subscripted to the onRingToss event
         //Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Peg"))
+        {
+            Debug.Log("Ring passed into peg");
+            GameManager.Instance.gainPoints(1);
+        }
     }
 }
