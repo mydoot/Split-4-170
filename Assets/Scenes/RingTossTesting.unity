@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 3647413}
   - component: {fileID: 3647412}
   m_Layer: 0
-  m_Name: Cylinder (9)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 220135271}
   - component: {fileID: 220135270}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 294978843}
   - component: {fileID: 294978842}
   m_Layer: 0
-  m_Name: Cylinder (8)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 398822361}
   - component: {fileID: 398822360}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 791066247}
   - component: {fileID: 791066246}
   m_Layer: 0
-  m_Name: Cylinder (7)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 1140151123}
   - component: {fileID: 1140151122}
   m_Layer: 0
-  m_Name: Cylinder (5)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 1618557120}
   - component: {fileID: 1618557119}
   m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1154,7 +1154,7 @@ GameObject:
   - component: {fileID: 1679313486}
   - component: {fileID: 1679313485}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ringPrefab: {fileID: 8471235228112346854, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
   ringSpawn: {fileID: 180834455}
+  Points: 0
 --- !u!4 &1907236388
 Transform:
   m_ObjectHideFlags: 0
@@ -1517,10 +1518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1537,7 +1538,7 @@ Canvas:
   m_GameObject: {fileID: 1953113284}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1720,7 +1721,7 @@ GameObject:
   - component: {fileID: 2062629885}
   - component: {fileID: 2062629884}
   m_Layer: 0
-  m_Name: Cylinder (4)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1834,7 +1835,7 @@ GameObject:
   - component: {fileID: 2118281495}
   - component: {fileID: 2118281494}
   m_Layer: 0
-  m_Name: Cylinder (6)
+  m_Name: Peg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1986,6 +1987,14 @@ PrefabInstance:
     - target: {fileID: 4562639800014540504, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7511109343651131778, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7511109343651131778, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7586101189949529283, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
       propertyPath: m_Mass
