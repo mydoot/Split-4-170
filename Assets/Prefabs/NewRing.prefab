@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4432956922472209859}
   - component: {fileID: 686330589620347500}
   - component: {fileID: 7307126743400105701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 0
+  m_Height: 0.1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3328594877963553532

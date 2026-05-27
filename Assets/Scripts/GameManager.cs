@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("generating new ring");
             RingManager newRing = Instantiate(ringPrefab, ringSpawn.position, originalRingRotation);
-            ringText.text = $"Rings Remaining: {ringCount--}";
+            ringText.text = $"Rings Remaining: {--ringCount}";
         }
         else 
             Debug.Log("no more rings!");
