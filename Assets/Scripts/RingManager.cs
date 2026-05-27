@@ -24,19 +24,18 @@ public class RingManager : MonoBehaviour
 
     private Plane dragPlane;
 
-    private bool isThrown = false;
-
     [Tooltip("Boolean to determine if this ring object was thrown")]
+    public bool isThrown = false;
 
     public delegate void OnRingToss();
 
-    [Tooltip("Power of the ring toss. This value is multiplied by the vector of the drag.")]
+    [Tooltip("Power of the ring toss. This value is multiplied by the vector of the drag")]
     public float power = 10f;
 
-    [Tooltip("Power of the ring toss. This value is multiplied by the vector of the drag.")]
+    [Tooltip("Amount of seconds a ring will last before it is destroyed")]
     public float lifeTime = 5f;
 
-    [Tooltip("Resolution for the trajectory line")]
+    [Tooltip("Determines how long the prediction line will be. Bigger value = longer line")]
     public int trajectoryResolution = 30;
 
     [SerializeField] private Camera cam;
@@ -47,6 +46,7 @@ public class RingManager : MonoBehaviour
 
     [SerializeField] private GameObject clickDetection;
 
+    [Tooltip("Used for the purposes of detecting raycasts on specific objects")]
     public LayerMask raycastOnlyLayer;
 
 
@@ -74,10 +74,10 @@ public class RingManager : MonoBehaviour
 
                 if (Physics.Raycast(clickRay, out RaycastHit hit, 500f, raycastOnlyLayer)) //Check if mouse is clicked on ring
                 {
-                    Debug.Log("The raycast successfully hit: " + hit.collider.gameObject.name);
+                    //Debug.Log("The raycast successfully hit: " + hit.collider.gameObject.name);
                     if (hit.collider.gameObject == clickDetection)
                     {
-                        Debug.Log("The raycast successfully hit yessss: " + hit.collider.gameObject.name);
+                        
                         dragPlane = new Plane(Vector3.up, ringTransform.position);
 
 

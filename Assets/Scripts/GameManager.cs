@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform ringSpawn;
 
     [SerializeField] TextMeshProUGUI pointText;
+    [SerializeField] TextMeshProUGUI ringText;
 
     public static GameManager Instance { get; private set; } //Turns GameManager into a singleton
 
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     //public variables
     public int Points = 0;
+
+    public int ringCount = 10;
 
     private void Awake()
     {
@@ -36,8 +39,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         onRingToss += instantiateNewRing; //GameManager immediately subscribes to the onRingToss event
-
         originalRingRotation = ringPrefab.transform.rotation;
+        
+        ringText.text = $"Rings Remaining: {ringCount}";
     }
 
     // Update is called once per frame
@@ -48,9 +52,14 @@ public class GameManager : MonoBehaviour
 
     void instantiateNewRing()
     {
-        Debug.Log("generating new ring");
-        RingManager newRing = Instantiate(ringPrefab, ringSpawn.position, originalRingRotation);
-    
+        if (ringCount > 0)
+        {
+            Debug.Log("generating new ring");
+            RingManager newRing = Instantiate(ringPrefab, ringSpawn.position, originalRingRotation);
+            ringText.text = $"Rings Remaining: {--ringCount}";
+        }
+        else 
+            Debug.Log("no more rings!");
     }
 
     public void gainPoints(int num)
