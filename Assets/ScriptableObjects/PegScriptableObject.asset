@@ -12,4 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d15bf9f9b17be49a27128062000035, type: 3}
   m_Name: PegScriptableObject
   m_EditorClassIdentifier: Assembly-CSharp::PegScriptableObject
-  Pegs: []
+  Pegs:
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0
+  - PegName: 0
+    hasRing: 0

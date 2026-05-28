@@ -11,6 +11,6 @@ public class PegScriptableObject : ScriptableObject
 [Serializable]
 public class Names
 {
-    public PegNames pegname;
+    public PegNames PegName;
     public bool hasRing;
 }
