@@ -3,6 +3,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
+public enum PegNames
+{
+    name1, name2, name3, name4, name5, name6, name7, name8, name9, name10
+}
+
 public class GameManager : MonoBehaviour
 {
     [Tooltip("This needs to be the prefab from the Assets/Prefab folder.")]
@@ -40,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         onRingToss += instantiateNewRing; //GameManager immediately subscribes to the onRingToss event
         originalRingRotation = ringPrefab.transform.rotation;
-        
+
         ringText.text = $"Rings Remaining: {ringCount}";
     }
 
@@ -58,7 +63,7 @@ public class GameManager : MonoBehaviour
             RingManager newRing = Instantiate(ringPrefab, ringSpawn.position, originalRingRotation);
             ringText.text = $"Rings Remaining: {--ringCount}";
         }
-        else 
+        else
             Debug.Log("no more rings!");
     }
 

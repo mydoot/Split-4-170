@@ -149,6 +149,7 @@ public class RingManager : MonoBehaviour
         //Destroy(gameObject);
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Peg"))
@@ -156,5 +157,6 @@ public class RingManager : MonoBehaviour
             Debug.Log("Ring passed into peg");
             GameManager.Instance.gainPoints(1);
         }
+        
     }
 }
