@@ -16,6 +16,8 @@ public class PegManager : MonoBehaviour
     [SerializeField] private Material successMaterial;
     [SerializeField] private Material defaultMaterial;
 
+    [SerializeField] private GameObject sauronPeg;  
+
     public List<Names> pegs = new List<Names>();
 
     [SerializeField] private List<Names> checkPegOrder = new List<Names>();
@@ -60,6 +62,12 @@ public class PegManager : MonoBehaviour
         {
             Debug.LogWarning($"Peg not found in list: {peg.name}", this);
             return;
+        }
+
+        //sauron ending
+        if (specificPeg.PegName == sauronPeg)
+        {
+            GameManager.triggerSignUI?.Invoke("You lost.");
         }
 
         int nextIndex = checkPegOrder.Count;
