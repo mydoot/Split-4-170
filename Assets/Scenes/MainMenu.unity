@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f59a4812204d8d4d8ec840a3dee8f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  gameSceneName: RingTossTesting
+  gameSceneName: Main Scene
 --- !u!4 &1941801734
 Transform:
   m_ObjectHideFlags: 0
