@@ -59,6 +59,12 @@ public class PegManager : MonoBehaviour
 
         Names specificPeg = pegs.Find(p => p.PegName == peg);
 
+         if (specificPeg == null)
+        {
+            Debug.LogWarning($"Peg not found in list: {peg.name}", this);
+            return;
+        }
+
         if (!specificPeg.hasRing)
         {
             specificPeg.hasRing = true;
@@ -68,6 +74,11 @@ public class PegManager : MonoBehaviour
             checkPegOrder.Add(specificPeg);
         }
 
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.onPegLand -= pegHasRing;
     }
 
 }
