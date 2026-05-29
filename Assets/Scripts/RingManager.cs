@@ -153,12 +153,16 @@ public class RingManager : MonoBehaviour
     {
         yield return new WaitForSeconds(lifeTime);
         GameManager.onRingToss?.Invoke(); //calls all methods subscripted to the onRingToss event
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other is MeshCollider)
+        {
+            Debug.Log("Ring passed through mesh collider");
+        }
         if (other.CompareTag("Peg"))
         {
             Debug.Log("Ring passed into peg");

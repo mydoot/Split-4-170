@@ -49,7 +49,10 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        //DontDestroyOnLoad(gameObject); //GameManager goes betweens scenes 
+        //DontDestroyOnLoad(gameObject); //GameManager goes betweens scenes
+        onRingToss = null;
+        triggerSignUI = null;
+        onPegLand = null;
     }
 
     void Start()
