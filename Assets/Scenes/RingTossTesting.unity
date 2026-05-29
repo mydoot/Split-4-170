@@ -981,7 +981,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671f765f990680d46ba35d4b24357e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pegObject: {fileID: 11400000, guid: a168c6b4d7565914384285e7040c3ef0, type: 2}
+  pegParent: {fileID: 0}
+  successMaterial: {fileID: 0}
+  pegs: []
+  checkPegOrder: []
+  hasWon: 0
 --- !u!1 &508609244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2088,7 @@ MonoBehaviour:
   ringSpawn: {fileID: 180834455}
   pointText: {fileID: 521422977}
   ringText: {fileID: 81521583}
+  endObjectTransform: {fileID: 0}
   Points: 0
   ringCount: 10
 --- !u!4 &1907236388
@@ -2868,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 2055971746}
     - target: {fileID: 8471235228112346854, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
       propertyPath: power
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8471235228112346854, guid: 56ff0e18067ee3140b0fa79020494d02, type: 3}
       propertyPath: clickDetection

@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   isThrown: 0
-  power: 5
+  power: 10
   lifeTime: 3
   trajectoryResolution: 40
   cam: {fileID: 0}
