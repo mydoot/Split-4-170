@@ -21,15 +21,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI ringText;
 
     [SerializeField] Transform endObjectTransform;
-
+    private Quaternion originalRingRotation; 
+    //singleton creation
     public static GameManager Instance { get; private set; } //Turns GameManager into a singleton
 
-    public static RingManager.OnRingToss onRingToss; //public event for when the ring is thrown;
+    // Public events (delegates)
+    public delegate void TriggerSignUI(string text);
+    public static TriggerSignUI triggerSignUI; //public event for when the ring is thrown
 
-    public static PegManager.OnPegLand onPegLand; //public event for when the ring is thrown;
+    public static RingManager.OnRingToss onRingToss; //public event for when the ring is thrown
 
+    public static PegManager.OnPegLand onPegLand; //public event for when a ring lands in a peg
 
-    private Quaternion originalRingRotation;
+    
 
     //public variables
     public int Points = 0;
@@ -45,12 +49,13 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); //GameManager goes betweens scenes 
+        //DontDestroyOnLoad(gameObject); //GameManager goes betweens scenes 
     }
 
     void Start()
     {
         onRingToss += instantiateNewRing; //GameManager immediately subscribes to the onRingToss event
+        triggerSignUI += triggerEndScreen;
         originalRingRotation = ringPrefab.transform.rotation;
 
         ringText.text = $"Rings Remaining: {ringCount}";
@@ -71,7 +76,10 @@ public class GameManager : MonoBehaviour
             ringText.text = $"Rings Remaining: {--ringCount}";
         }
         else
+        {
             Debug.Log("no more rings!");
+            triggerSignUI?.Invoke("Good try!");
+        }
     }
 
     public void gainPoints(int num)
@@ -80,13 +88,16 @@ public class GameManager : MonoBehaviour
         pointText.text = $"Points: {Points}";
     }
 
-    private void endScreen()
+    public void triggerEndScreen(string text)
     {
-        
+        endObjectTransform.gameObject.SetActive(true);
+        endObjectTransform.DOMove(endObjectTransform.up * 10, 1f).From(true).SetEase(Ease.OutBounce);
     }
 
     public void restartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Points = 0;
+        ringCount = 10;
     }
 }

@@ -45,7 +45,7 @@ public class PegManager : MonoBehaviour
                 if (pegs.All(pegs => pegs.hasRing))
                 {
                     hasWon = true;
-                    //trigger a function
+                    GameManager.triggerSignUI?.Invoke("You win!");
                     Debug.Log("won!");
                 }
             }

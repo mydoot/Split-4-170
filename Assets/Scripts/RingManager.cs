@@ -49,6 +49,8 @@ public class RingManager : MonoBehaviour
     [Tooltip("Used for the purposes of detecting raycasts on specific objects")]
     public LayerMask raycastOnlyLayer;
 
+    private bool clickedRing = false;
+
 
     void Start()
     {
@@ -74,10 +76,11 @@ public class RingManager : MonoBehaviour
 
                 if (Physics.Raycast(clickRay, out RaycastHit hit, 500f, raycastOnlyLayer)) //Check if mouse is clicked on ring
                 {
+                    clickedRing = true;
                     //Debug.Log("The raycast successfully hit: " + hit.collider.gameObject.name);
                     if (hit.collider.gameObject == clickDetection)
                     {
-                        
+
                         dragPlane = new Plane(Vector3.up, ringTransform.position);
 
 
@@ -108,16 +111,20 @@ public class RingManager : MonoBehaviour
             }
             if (UnityEngine.InputSystem.Mouse.current.leftButton.wasReleasedThisFrame)
             {
-                Debug.Log("release");
-                StartCoroutine(destroyRing());
-                isThrown = true;
-                Vector3 finalForce = dragVector * power;
+                if (clickedRing)
+                {
+                    Debug.Log("release");
+                    StartCoroutine(destroyRing());
+                    isThrown = true;
+                    Vector3 finalForce = dragVector * power;
 
-                rb3D.useGravity = true;
-                rb3D.AddForce(finalForce, ForceMode.Impulse);
-                //rb3D.AddForce(-ringTransform.up * (power));
+                    rb3D.useGravity = true;
+                    rb3D.AddForce(finalForce, ForceMode.Impulse);
+                    //rb3D.AddForce(-ringTransform.up * (power));
 
-                line.enabled = false;
+                    line.enabled = false;
+                    clickedRing = false;
+                }
             }
         }
     }
@@ -158,6 +165,6 @@ public class RingManager : MonoBehaviour
             GameManager.onPegLand?.Invoke(other.transform.parent.gameObject);
             GameManager.Instance.gainPoints(1);
         }
-        
+
     }
 }
