@@ -122,6 +122,10 @@ public class RingManager : MonoBehaviour
                     rb3D.AddForce(finalForce, ForceMode.Impulse);
                     //rb3D.AddForce(-ringTransform.up * (power));
 
+                    // Cassian - Notify Sauron
+                    SauronPeg sauron = FindFirstObjectByType<SauronPeg>();
+                    if (sauron != null) sauron.NotifyRingThrown(rb3D);
+
                     line.enabled = false;
                     clickedRing = false;
                 }
