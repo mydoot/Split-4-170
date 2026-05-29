@@ -155,6 +155,7 @@ public class RingManager : MonoBehaviour
         if (other.CompareTag("Peg"))
         {
             Debug.Log("Ring passed into peg");
+            GameManager.onPegLand?.Invoke(other.transform.parent.gameObject);
             GameManager.Instance.gainPoints(1);
         }
         

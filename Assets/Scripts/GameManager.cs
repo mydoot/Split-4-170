@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum PegNames
 {
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; } //Turns GameManager into a singleton
 
     public static RingManager.OnRingToss onRingToss; //public event for when the ring is thrown;
+
+    public static PegManager.OnPegLand onPegLand; //public event for when the ring is thrown;
+
 
     private Quaternion originalRingRotation;
 
@@ -71,5 +75,15 @@ public class GameManager : MonoBehaviour
     {
         Points += num;
         pointText.text = $"Points: {Points}";
+    }
+
+    private void endScreen()
+    {
+        
+    }
+
+    public void restartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
