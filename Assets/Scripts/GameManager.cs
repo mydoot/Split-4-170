@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public enum PegNames
 {
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI pointText;
     [SerializeField] TextMeshProUGUI ringText;
+
+    [SerializeField] Transform endObjectTransform;
 
     public static GameManager Instance { get; private set; } //Turns GameManager into a singleton
 
